@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import Nav from './components/Nav'
+import Home from './views/Home'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
+import { RuleTable } from './components/RuleTable';
+import { SearchTable } from './components/SearchTable';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename={process.env.PUBLIC_URL}>
+      <Nav/>
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/rule:rule" exact component={RuleTable}/>
+        <Route path="/search:searchTerm" exact component={SearchTable}/>
+      </Switch>
+    </Router>
   );
 }
 

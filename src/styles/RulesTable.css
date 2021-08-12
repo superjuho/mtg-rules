@@ -1,0 +1,14 @@
+.rivi {
+  color: green;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px;
+}
+
+.RulesTable {
+  white-space: pre-wrap;
+  flex-wrap: wrap;
+  padding: 40px;
+}
