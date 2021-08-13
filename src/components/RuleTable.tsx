@@ -9,21 +9,23 @@ export const RuleTable = ( rule: any ) => {
     
     return (
         <div className="RulesTable">
-           {rules.map((x: string) => {
-                if(x.startsWith('\n'+ ruling.substring(0,4))){
-                    const line = x.split(/\n/)
-                    console.log("ruletable line: ",line)
-                    const rivi = line.map((rivi: string ) => {
-                        if(rivi.startsWith(ruling.substring(0,1)))
-                        return <div className="rivi">{rivi}</div>
-                        else 
-                            return null
-                    })  
-                    return rivi 
-                } else {
-                    return null
-                }
-                })}
+            <div className="ruleTable"> 
+            {rules.map((x: string) => {
+                    if(x.startsWith('\n'+ ruling.substring(0,4))){
+                        const line = x.split(/\n/)
+                        const ruleLine = line.map((ruleLine: string ) => {
+                            if(ruleLine.startsWith(ruling.substring(0,1)))
+                            return <div className="ruleLineN">{ruleLine}</div>
+                            else 
+                                return null
+                        })  
+                        return ruleLine
+                    } else {
+                        return null
+                    }
+                    }
+                )}
+            </div>
         </div>
     )
 }

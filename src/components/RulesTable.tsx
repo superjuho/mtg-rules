@@ -10,20 +10,26 @@ const RulesTable = () => {
     
 
     return (
-        <div className="RulesTable">
-           {rules.map((x: string) => {
-                if(x.startsWith('\n'+ n + '.')){
-                    const line = x.split(/\n/)
-                    n++
-                    const rivi = line.map((rivi: string ) => {
-                        return <Link className="rivi" to={"/rule" + rivi}>{rivi}</Link>
-                    })  
-                    return rivi 
-                } else {
-                    return null
-                }
-                })}
-        </div>
+        <>
+            <h1 className="tableContents">Table of Contents</h1>
+            <div className="RulesTable">
+            {rules.map((x: string) => {
+                    if(x.startsWith('\n'+ n + '.')){
+                        const line = x.split(/\n/)
+                        const ruleLine = <div className="rule"> {line.map((ruleLine: string ) => {
+                            if(ruleLine.startsWith(n.toString())) {
+                                return <Link className="ruleLine" to={"/rule" + ruleLine}>{ruleLine}</Link>
+                            }
+                        })  }</div>
+                        n++
+                        return ruleLine
+                    } else {
+                        return null
+                    }
+                    })}
+                
+            </div>
+        </>
     )
 }
 

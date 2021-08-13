@@ -5,24 +5,40 @@ import { Link } from 'react-router-dom'
 export const SearchTable = ( term: any ) => {
 
     const searchTerm = term.match.params.searchTerm
-    console.log("searchTAble: ",searchTerm)
+    console.log("searchTAble: ", searchTerm)
     const rules = useAllRules()
+    let isEmpty = true;
 
 
     return (
-            <div className="RulesTable">
-           {rules.map((x: any) => {
-                if(x.includes(searchTerm)){
-                    const line = x.split(/\n/)
-                    console.log("Searchtable: ",line)
-                    const rivi = line.map((rivi:any ) => {
-                        return <Link className="rivi" to={'/rule' +rivi}>{rivi}</Link>
-                    })  
-                    return rivi 
-                } else {
-                    return null
-                }
-                })}
-        </div>
+        <>
+            <h1 className="tableContents"> Results for: "{searchTerm}" </h1>
+                <div className="SearchTable">
+                    {rules.map((x: any) => {
+                            if(x.includes(searchTerm)){
+                                const line = x.split(/\n/)
+                                const ruleLine = line.map((ruleLine:any ) => {
+                                    if(ruleLine.length > 3) {
+                                        isEmpty = false
+                                        if(ruleLine.match(/\b[0-9]{3}.[0-9]{1}[a-z]\b/))
+                                        return <Link className="ruleLineSearch" to={'/rule' +ruleLine}>{ruleLine}</Link>
+                                    }
+                                })  
+                                return ruleLine 
+                            } else {
+                                return null
+                            }
+                        })}
+                </div>
+                <h3 className="searchFail">
+                    {isEmpty
+                        ? 
+                     "Your search didn't have any magic :( so nothing to see here"
+                     : 
+                     " "   
+                    }
+                </h3>
+
+        </>
     )
 }

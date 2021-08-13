@@ -1,15 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router'
+import '../styles/Nav.css'
 
 
 const Nav  = ({ history }: any) => {
-    const [searchTerm, setSearchTerm] = useState(' ')
+    const [searchTerm, setSearchTerm] = useState('')
     const handleChange = (event: any) => {
-        setSearchTerm(event.target.value);
-        console.log(searchTerm);
+        setSearchTerm(event.target.value)
+        console.log(searchTerm)
       };
     
     const doSearch = () => {
@@ -19,17 +20,16 @@ const Nav  = ({ history }: any) => {
 
     return (
         <div className="navigation">
-            <Link to="/" className="navMainTitle">Magic the Gathering Rulezzz</Link>
-            <form>
-            <label>Search</label>
+            <Link to="/" className="navMainTitle">Magic: the Gathering Rules</Link>
+            <div className="search">
             <input 
                 type="text" 
                 placeholder="Search"
                 value={searchTerm}
                 onChange={handleChange}
                 />
-            <button onClick={doSearch}>🔍</button>
-            </form>
+            <button className="searchBtn" onClick={doSearch}>🔍</button>
+            </div>
         </div>
     )
 }
