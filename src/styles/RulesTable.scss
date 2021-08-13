@@ -120,3 +120,131 @@
     text-align: center;
     margin: 2px;
 }
+
+@media only screen and (max-width: 720px) { 
+
+    .ruleLine {
+        text-decoration: none;
+        color: whitesmoke;
+        padding: 5px 10px;
+        width: 60%;
+        height: auto;
+        float: left;
+    }
+    
+    .RulesTable {
+        font-size: 1rem;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .SearchTable{
+        font-size: 1rem;
+        padding: 5px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    
+    .rule {
+        width: 70vw;
+        margin: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        word-wrap:break-word;
+        border-radius: 4px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        align-self: flex-start;
+    }
+    
+    .ruleTable {
+        width: auto;
+        margin: 10px 20px;
+    }
+    
+    .ruleTable .ruleLine {
+        margin: 5px;
+    }
+    
+    .rule::-webkit-scrollbar {
+        background-color: rgb(34, 34, 34);
+    }
+    
+    .rule::-webkit-scrollbar-thumb {
+        background: radial-gradient(ellipse at top, rgb(10, 187, 231) 0%, rgb(62, 39, 92) 100%);;
+    }
+    
+    .ruleLine:first-child {
+        height: auto;
+        background: radial-gradient(ellipse at top, rgb(102, 65, 151) 0%, rgb(55, 34, 82) 100%);
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding-right: 20px;
+        font-weight: 200;
+        font-size: 1.1rem;
+        font-family: 'Bree Serif', serif;
+        pointer-events: none;
+        text-shadow: 1px 1px 2px black;
+    }
+    
+    .ruleLine:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .ruleLine:hover {
+        text-shadow: 2px 2px 4px lightseagreen;
+    }
+    
+    .ruleLineSearch {
+        text-decoration: none;
+        color: whitesmoke;
+        margin: 10px 15px;
+        width: 100%;
+        float: left;
+    }
+    
+    .ruleLineSearch:hover {
+        text-shadow: 3px 4px 5px lightseagreen;
+    }
+    
+    .tableContents {
+        font-size: 1rem;
+        color: whitesmoke;
+        font-family: 'Bree Serif', serif;
+        text-align: center;
+        margin: 2px;
+    }
+    
+    .ruleLineN:first-child {
+        background: radial-gradient(ellipse at top, rgb(102, 65, 151) 0%, rgb(55, 34, 82) 100%);
+        padding-right: 20px;
+        font-weight: 200;
+        font-size: 1.1rem;
+        font-family: 'Bree Serif', serif;
+        text-shadow: 2px 3px 4px black;
+        
+    }
+    
+    .ruleLineN:last-child {
+        padding-bottom: 70px;
+    }
+    
+    .ruleLineN {
+        text-decoration: none;
+        color: whitesmoke;
+        padding: 10px 20px;
+        width: 100%;
+        float: left;
+    }
+    
+    .searchFail {
+        padding-top: 30px;
+        color: whitesmoke;
+        text-align: center;
+        margin: 2px;
+    }
+
+}
