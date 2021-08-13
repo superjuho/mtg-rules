@@ -1,6 +1,6 @@
 
 ## Online testable site deployed here
-` https://users.metropolia.fi/~juhopuur/mtgrules/build/ `
+>> https://users.metropolia.fi/~juhopuur/mtgrules/build/
 
 ## Available Scripts
 
