@@ -20,7 +20,7 @@ export const SearchTable = ( term: any ) => {
                                 const ruleLine = line.map((ruleLine:any ) => {
                                     if(ruleLine.length > 3) {
                                         isEmpty = false
-                                        if(ruleLine.match(/\b[0-9]{3}.[0-9]{1}[a-z]\b/))
+                                        if(ruleLine.startsWith(ruleLine.match(/\b[0-9]{3}\b/)) && ruleLine.includes(searchTerm))
                                         return <Link className="ruleLineSearch" to={'/rule' +ruleLine}>{ruleLine}</Link>
                                     }
                                 })  

@@ -14,9 +14,16 @@ const Nav  = ({ history }: any) => {
       };
     
     const doSearch = () => {
-        if(searchTerm.length > 3)
+        if(searchTerm.length > 2)
         history.push('/search' + searchTerm)
     }
+
+    
+    const handleKeyDown = (event: any) => {
+            if(event.key === 'Enter')
+            doSearch()
+    }
+    
 
     return (
         <div className="navigation">
@@ -27,6 +34,7 @@ const Nav  = ({ history }: any) => {
                 placeholder="Search"
                 value={searchTerm}
                 onChange={handleChange}
+                onKeyDown={handleKeyDown}
                 />
             <button className="searchBtn" onClick={doSearch}>🔍</button>
             </div>
