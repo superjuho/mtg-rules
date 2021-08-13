@@ -8,7 +8,7 @@ export const RuleTable = ( rule: any ) => {
     const rules = useAllRules()
     
     return (
-        <div className="RulesTable">
+        <>
             <div className="ruleTable"> 
             {rules.map((x: string) => {
                     if(x.startsWith('\n'+ ruling.substring(0,4))){
@@ -26,6 +26,6 @@ export const RuleTable = ( rule: any ) => {
                     }
                 )}
             </div>
-        </div>
+        </>
     )
 }

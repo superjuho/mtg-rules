@@ -127,19 +127,20 @@
         text-decoration: none;
         color: whitesmoke;
         padding: 5px 10px;
-        width: 60%;
+        width: 100%;
         height: auto;
         float: left;
     }
     
     .RulesTable {
         font-size: 1rem;
-        padding: 10px;
+        padding: 5px 30px;
         display: flex;
         flex-wrap: wrap;
+        height: auto;
     }
     
-    .SearchTable{
+    .SearchTable {
         font-size: 1rem;
         padding: 5px 30px;
         display: flex;
@@ -160,8 +161,11 @@
     }
     
     .ruleTable {
-        width: auto;
-        margin: 10px 20px;
+        font-size: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        margin: 10px 15px;
     }
     
     .ruleTable .ruleLine {
